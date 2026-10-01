@@ -1,4 +1,6 @@
-<h1 align="center">Hi, I'm Rangarajan 👋</h1>
+<p align="center">
+  <img src="assets/header.svg" alt="Rangarajan G: building AI agents you can trust" width="100%">
+</p>
 
 <p align="center">
   <b>I build AI agents and the tooling that keeps them safe and measurable.</b><br>
@@ -57,3 +59,7 @@ Chat-driven API testing: a local LLM agent (**LangGraph + Ollama**) routes reque
 ---
 
 <p align="center">Feedback and collaboration welcome, reach me on <a href="https://linkedin.com/in/rangarajan19">LinkedIn</a>.</p>
+
+<p align="center">
+  <img src="assets/footer.svg" alt="" width="100%">
+</p>
