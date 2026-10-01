@@ -101,13 +101,6 @@ Chat-driven API testing: a local LLM (**LangGraph + Ollama**) routes requests, *
 
 <p align="center"><img src="assets/divider.svg" width="100%" alt=""></p>
 
-## 📊 GitHub stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rangarajan19&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="GitHub stats" height="160">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rangarajan19&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="Top languages" height="160">
-</p>
-
 <p align="center">
   <b>Feedback and collaboration welcome.</b> Reach me on <a href="https://linkedin.com/in/rangarajan19">LinkedIn</a>.
 </p>
