@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="90" viewBox="0 0 900 90"><clipPath id="f"><rect width="900" height="90"/></clipPath><g clip-path="url(#f)"><rect width="900" height="90" fill="#0d1117"/><path d="M0 50 Q150 36 300 50 T600 50 Q750 36 900 50 T1200 50 Q1350 36 1500 50 T1800 50 V90 H0 Z" fill="#1f6feb" opacity="0.5"><animateTransform attributeName="transform" type="translate" from="0 0" to="-600 0" dur="8s" repeatCount="indefinite"/></path><path d="M0 62 Q150 52 300 62 T600 62 Q750 52 900 62 T1200 62 Q1350 52 1500 62 T1800 62 V90 H0 Z" fill="#2f81f7" opacity="0.7"><animateTransform attributeName="transform" type="translate" from="0 0" to="-600 0" dur="5s" repeatCount="indefinite"/></path></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="56" viewBox="0 0 900 56" role="img" aria-label="End of trace: agent://rangarajan19, session closed.">
+<style>
+  svg{--rule:#D5DDE1;--dim:#5B6A72;--amber:#9A5C0E}
+  @media (prefers-color-scheme: dark){svg{--rule:#27323A;--dim:#78878F;--amber:#F2A63B}}
+  .mono{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:12.5px}
+  .dm{fill:var(--dim)} .am{fill:var(--amber)}
+</style>
+<rect x="0" y="0.5" width="900" height="1" fill="var(--rule)"/>
+<text class="mono" x="0" y="34"><tspan class="am">agent://</tspan><tspan class="dm">rangarajan19</tspan></text>
+<circle cx="771" cy="29.5" r="3.4" fill="var(--dim)" opacity=".55"/>
+<text class="mono dm" x="900" y="34" text-anchor="end" style="letter-spacing:1px">session closed</text>
+</svg>

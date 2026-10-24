@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="12" viewBox="0 0 900 12"><defs><linearGradient id="d" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d1117" stop-opacity="0"/><stop offset=".5" stop-color="#58a6ff"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></linearGradient></defs><rect x="0" y="5" width="900" height="2" fill="url(#d)" opacity=".5"/><circle cy="6" r="4" fill="#58a6ff"><animate attributeName="cx" values="0;900" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="4s" repeatCount="indefinite"/></circle></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="10" viewBox="0 0 900 10" role="presentation" aria-hidden="true">
+<style>
+  svg{--rule:#D5DDE1;--amber:#9A5C0E}
+  @media (prefers-color-scheme: dark){svg{--rule:#27323A;--amber:#F2A63B}}
+</style>
+<rect x="0" y="4.5" width="900" height="1" fill="var(--rule)"/>
+<rect x="0" y="3" width="56" height="4" rx="2" fill="var(--amber)"/>
+</svg>

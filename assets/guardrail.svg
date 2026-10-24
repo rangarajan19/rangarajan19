@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" role="img" aria-label="Diagram: the LLM proposes a tool call, a guardrail layer checks it against an allow-list with dry-run and approval, allowed calls reach the MCP tool, and blocked calls return an error the model can recover from.">
+<defs>
+  <style>
+    svg{--bg:#FFFFFF;--surf:#F6F8F9;--rule:#D5DDE1;--tx:#15212A;--dim:#5B6A72;--amber:#9A5C0E;--mint:#0F7355;--coral:#AE3A20}
+    @media (prefers-color-scheme: dark){
+      svg{--bg:#0F1317;--surf:#18222A;--rule:#2A353D;--tx:#DDE5E9;--dim:#78878F;--amber:#F2A63B;--mint:#4FD1A5;--coral:#EA7358}
+    }
+    .mono{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono","Segoe UI Mono",Menlo,Consolas,"Liberation Mono",monospace}
+    .node{fill:var(--surf);stroke:var(--rule);stroke-width:1}
+    .gate{fill:none;stroke:var(--rule);stroke-width:1;stroke-dasharray:5 4}
+    .wire{fill:none;stroke:var(--rule);stroke-width:1.5}
+    .arc{fill:none;stroke:var(--rule);stroke-width:1.25;stroke-dasharray:4 5}
+    .head{fill:var(--rule)}
+    .t1{font-size:16px;font-weight:700}
+    .t2{font-size:10.5px}
+    .t3{font-size:14px;font-weight:600;fill:var(--tx)}
+    .am{fill:var(--amber)} .mn{fill:var(--mint)} .co{fill:var(--coral)} .dm{fill:var(--dim)}
+
+    /* 8s loop: one call passes, the next is blocked and recovered from. */
+    .pk{r:4.5px}
+    .p1{fill:var(--amber);offset-path:path("M212 92H347");animation:p1 8s linear infinite}
+    @keyframes p1{0%{offset-distance:0%;opacity:1}18.75%{offset-distance:100%;opacity:1}19%,100%{offset-distance:100%;opacity:0}}
+
+    .p2{fill:var(--mint);offset-path:path("M553 92H688");animation:p2 8s linear infinite}
+    @keyframes p2{0%,23.75%{offset-distance:0%;opacity:0}24.5%{opacity:1}41.25%{offset-distance:100%;opacity:1}41.5%,100%{offset-distance:100%;opacity:0}}
+
+    .p3{fill:var(--amber);offset-path:path("M212 92H347");animation:p3 8s linear infinite}
+    @keyframes p3{0%,50%{offset-distance:0%;opacity:0}50.5%{opacity:1}67.5%{offset-distance:100%;opacity:1}67.8%,100%{offset-distance:100%;opacity:0}}
+
+    .p4{fill:var(--coral);offset-path:path("M450 132C450 174 320 180 170 168C140 165 124 152 124 137");animation:p4 8s linear infinite}
+    @keyframes p4{0%,73.75%{offset-distance:0%;opacity:0}74.5%{opacity:1}92.5%{offset-distance:100%;opacity:1}92.8%,100%{offset-distance:100%;opacity:0}}
+
+    .gpass{fill:none;stroke:var(--mint);stroke-width:1.5;opacity:0;animation:gpass 8s linear infinite}
+    @keyframes gpass{0%,18.5%{opacity:0}19.5%{opacity:1}30%{opacity:1}34%,100%{opacity:0}}
+
+    .gblock{fill:none;stroke:var(--coral);stroke-width:1.5;opacity:0;animation:gblock 8s linear infinite}
+    @keyframes gblock{0%,67.2%{opacity:0}68.2%{opacity:1}90%{opacity:1}93%,100%{opacity:0}}
+
+    .okmark{opacity:0;animation:gpass 8s linear infinite}
+    .xmark{opacity:0;animation:gblock 8s linear infinite}
+    .blabel{opacity:0;animation:blabel 8s linear infinite}
+    @keyframes blabel{0%,68%{opacity:0}70%{opacity:1}90%{opacity:1}93%,100%{opacity:0}}
+
+    .arclive{stroke:var(--coral);stroke-dasharray:4 5;opacity:0;animation:gblock 8s linear infinite}
+
+    .litB{fill:none;stroke:var(--mint);stroke-width:1.5;opacity:0;animation:litB 8s linear infinite}
+    @keyframes litB{0%,40%{opacity:0}42%{opacity:1}52%{opacity:1}56%,100%{opacity:0}}
+
+    .litA{fill:none;stroke:var(--amber);stroke-width:1.5;opacity:0;animation:litA 8s linear infinite}
+    @keyframes litA{0%,91%{opacity:0}93%{opacity:1}99%{opacity:1}100%{opacity:0}}
+
+    .shake{animation:shake 8s linear infinite}
+    @keyframes shake{0%,67.4%{transform:translateX(0)}68%{transform:translateX(2.5px)}68.6%{transform:translateX(-2.5px)}69.2%{transform:translateX(1.5px)}69.8%,100%{transform:translateX(0)}}
+
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important}
+      .pk,.gpass,.gblock,.okmark,.xmark,.blabel,.arclive,.litA,.litB{opacity:0 !important}
+    }
+  </style>
+</defs>
+
+  <!-- wires -->
+  <path class="wire" d="M212 92H341"/>
+  <path class="head" d="M347 92l-8-4v8z"/>
+  <path class="wire" d="M553 92H682"/>
+  <path class="head" d="M688 92l-8-4v8z"/>
+
+  <!-- recovery arc -->
+  <path class="arc" d="M450 132C450 174 320 180 170 168C140 165 124 152 124 137"/>
+  <path class="arc arclive" d="M450 132C450 174 320 180 170 168C140 165 124 152 124 137"/>
+  <path class="head" d="M124 129l-4 8h8z"/>
+
+  <!-- llm -->
+  <g>
+    <rect class="node" x="36.5" y="56.5" width="175" height="72" rx="9"/>
+    <rect class="litA" x="36.5" y="56.5" width="175" height="72" rx="9"/>
+    <text class="mono t1 am" x="124" y="88" text-anchor="middle">llm</text>
+    <text class="mono t2 dm" x="124" y="108" text-anchor="middle">proposes a tool call</text>
+  </g>
+
+  <!-- guardrail -->
+  <g class="shake">
+    <rect class="gate" x="347.5" y="52.5" width="205" height="80" rx="9"/>
+    <rect class="gpass" x="347.5" y="52.5" width="205" height="80" rx="9"/>
+    <rect class="gblock" x="347.5" y="52.5" width="205" height="80" rx="9"/>
+    <text class="mono t3" x="450" y="88" text-anchor="middle">guardrail</text>
+    <text class="mono t2 dm" x="450" y="108" text-anchor="middle">allow-list, dry-run, approval</text>
+    <g class="okmark"><path d="M524 92l4 4 8-9" fill="none" stroke="var(--mint)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g class="xmark"><path d="M525 87l10 10M535 87l-10 10" fill="none" stroke="var(--coral)" stroke-width="2.2" stroke-linecap="round"/></g>
+  </g>
+
+  <!-- mcp tool -->
+  <g>
+    <rect class="node" x="688.5" y="56.5" width="175" height="72" rx="9"/>
+    <rect class="litB" x="688.5" y="56.5" width="175" height="72" rx="9"/>
+    <text class="mono t1 mn" x="776" y="88" text-anchor="middle">mcp tool</text>
+    <text class="mono t2 dm" x="776" y="108" text-anchor="middle">executes, returns result</text>
+  </g>
+
+  <!-- packets -->
+  <circle class="pk p1" cx="0" cy="0"/>
+  <circle class="pk p2" cx="0" cy="0"/>
+  <circle class="pk p3" cx="0" cy="0"/>
+  <circle class="pk p4" cx="0" cy="0"/>
+
+  <text class="mono t2 co blabel" x="470" y="178">blocked calls come back as an error the model can recover from</text>
+
+  <!-- legend row -->
+  <text class="mono t2 dm" x="36" y="26">tool-layer guardrails</text>
+  <text class="mono t2 dm" x="864" y="26" text-anchor="end">agentkit-mcp</text>
+</svg>
